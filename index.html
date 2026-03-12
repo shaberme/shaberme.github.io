@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scott Habermehl</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav id="main-nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-brand">Scott Habermehl</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" onclick="document.getElementById('main-nav').classList.toggle('nav-open')">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="talks.html">Talks</a></li>
+        <li><a href="wiki/index.html">Projects Wiki</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <div class="container">
+    <div class="hero">
+      <img src="assets/placeholder_profile.png" alt="Profile photo" class="hero-photo">
+      <div class="hero-text">
+        <h1>Scott Habermehl</h1>
+        <p class="hero-tagline">Researcher · Engineer · Physicist</p>
+        <p class="hero-bio">
+          Welcome! My name is Scott Habermehl. I am a researcher at Caltech in the group of Prof. Michael Roukes. 
+          My current work is principally aimed at utilizing nanoelectromechanical systems (NEMS) to build networks of coupled 
+          oscillators to study their fundamental physics and to leverage their exotic dynamics for analog computation. My 
+          broader research interests include nanomechanics, RF electronic systems, nonlinear dynamics, network science, 
+          analog/neuromorphic/oscillatory computing, and novel device physics. 
+        </p>
+        <p class="hero-bio">
+          I hope you enjoy my website. If you have any questions, comments, or would like to collaborate please
+          feel free to contact me via email at <strong>scott.rocky080</strong> at <strong>passmail</strong> dot <strong>net</strong> (note: this is an email alias 
+          which I rotate periodically). 
+        </p>
+      </div>
+    </div>
+
+    <!-- Current Status -->
+    <section>
+      <div class="status-block">
+        <span class="status-label">Current Status</span>
+        <p class="status-text">I recently defended my thesis and am continuing as a post doc at Caltech. But, I am currently looking for my next position. Please reach out via email if you would be interested in talking or know of a good match!</p>
+      </div>
+    </section>
+
+    <!-- Explore -->
+    <section>
+      <p class="section-title">Explore</p>
+      <div class="card-grid">
+
+        <a href="publications.html" class="card" style="text-decoration:none; color:inherit;">
+          <div class="card-body">
+            <div class="card-title">Publications</div>
+            <p class="card-desc">
+              Peer-reviewed articles, preprints, and other written work spanning
+              several research areas.
+            </p>
+          </div>
+        </a>
+
+        <a href="talks.html" class="card" style="text-decoration:none; color:inherit;">
+          <div class="card-body">
+            <div class="card-title">Talks &amp; Presentations</div>
+            <p class="card-desc">
+              Conference talks, invited lectures, workshops, and other presentations
+              given at various venues.
+            </p>
+          </div>
+        </a>
+
+        <a href="wiki/index.html" class="card" style="text-decoration:none; color:inherit;">
+          <div class="card-body">
+            <div class="card-title">Projects Wiki</div>
+            <p class="card-desc">
+              Software projects, tools, and short notes on topics I find interesting.
+            </p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- About Me -->
+    <section>
+      <p class="section-title">About Me</p>
+      <p>Welcome! My name is Scott Habermehl. I am a researcher at Caltech in the group of Prof. Michael Roukes. 
+          My current work is principally aimed at utilizing nanoelectromechanical systems (NEMS) to build networks of coupled 
+          oscillators to study their fundamental physics and to leverage their exotic dynamics for analog computation. I work
+          on all areas of the project including device simulation, design, fabrication, and characterization; electronics design and integration;
+          programming and control of experimental systems; numerical and theoretical analysis of coupled oscillator dynamics; and simulation of analog
+          computing methods. My broader research interests include nanomechanics, RF electronic systems, nonlinear dynamics, network science, 
+          analog/neuromorphic/oscillatory computing, and novel device physics. 
+      </p>
+    </section>
+  </div>
+
+  <footer>
+    <div class="container">
+      &copy; 2026 Scott Habermehl
+    </div>
+  </footer>
+
+</body>
+</html>
