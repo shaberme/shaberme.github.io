@@ -290,8 +290,8 @@ section { margin-bottom: 3rem; }
   --photo-x: 50%;
   --photo-y: 50%;
   --photo-zoom: 1;
-  width: 160px;
-  height: 160px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
@@ -452,7 +452,7 @@ footer {
     gap: 1.5rem;
     padding: 2.5rem 0 2rem;
   }
-  .hero-photo { width: 120px; height: 120px; }
+  .hero-photo { width: 150px; height: 150px; }
 
   /* Wiki */
   .wiki-layout {
