@@ -30,7 +30,11 @@
   <!-- Hero -->
   <div class="container">
     <div class="hero">
-      <img src="assets/placeholder_profile.png" alt="Profile photo" class="hero-photo">
+      <!-- Photo crop: --photo-x / --photo-y = focal point (0% = left/top, 100% = right/bottom),
+           --photo-zoom = magnification around that point (1 = no zoom) -->
+      <div class="hero-photo" style="--photo-x: 50%; --photo-y: 35%; --photo-zoom: 1.4;">
+        <img src="assets/profile.jpg" alt="Scott Habermehl">
+      </div>
       <div class="hero-text">
         <h1>Scott Habermehl</h1>
         <p class="hero-tagline">Researcher · Engineer · Physicist</p>
