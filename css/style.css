@@ -179,7 +179,7 @@ section { margin-bottom: 3rem; }
 /* --- Card grid -------------------------------------------- */
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));  /* cards stretch to fill the row */
   gap: 1.25rem;
 }
 
@@ -277,15 +277,14 @@ section { margin-bottom: 3rem; }
 
 /* --- Hero (landing page) ---------------------------------- */
 .hero {
-  padding: 4rem 0 3rem;
-  display: flex;
-  align-items: center;
-  gap: 2.5rem;
-  border-bottom: 1px solid var(--color-border);
+  padding: 4rem 0 0;
+  display: flow-root;  /* contains the floated photo */
   margin-bottom: 3rem;
 }
 
-/* Crop is set per-photo via --photo-x, --photo-y, --photo-zoom (see index.html) */
+/* Crop is set per-photo via --photo-x, --photo-y, --photo-zoom (see index.html).
+   The photo floats left; shape-outside keeps the text beside it flush, then curves
+   it around the photo's lower-right edge so it tucks in underneath. */
 .hero-photo {
   --photo-x: 50%;
   --photo-y: 50%;
@@ -294,7 +293,10 @@ section { margin-bottom: 3rem; }
   height: 200px;
   border-radius: 50%;
   overflow: hidden;
-  flex-shrink: 0;
+  float: left;
+  margin: 0 1.75rem 0.75rem 0;
+  shape-outside: inset(0 round 0 0 50% 0) border-box;
+  shape-margin: 1.5rem;
   border: 1px solid var(--color-border);
 }
 .hero-photo img {
@@ -311,7 +313,21 @@ section { margin-bottom: 3rem; }
   font-size: 1.05rem;
   color: var(--color-accent);
   font-weight: 500;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+/* Areas of interest: plain text with dot separators. Each item stays on one line and
+   its dot travels with it, so a wrapped line never starts with a separator. */
+.hero-tags {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+.hero-tags span { white-space: nowrap; }
+.hero-tags span:not(:last-child)::after {
+  content: "·";
+  margin: 0 0.1rem 0 0.45rem;
+  color: #a0a0b4;
 }
 .hero-bio { color: var(--color-text-muted); }
 
@@ -415,25 +431,6 @@ mjx-container[display="true"] {
   font-size: 0.95rem;
 }
 
-/* --- Status block (landing page) -------------------------- */
-.status-block {
-  background: #e8f5ee;
-  border-left: 4px solid #4a9a6f;
-  border-radius: var(--radius);
-  padding: 0.85rem 1.1rem;
-  margin-bottom: 0.5rem;
-}
-.status-label {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: #4a9a6f;
-  margin-bottom: 0.35rem;
-}
-.status-text { margin: 0; }
-
 /* --- Announcements (landing page) ------------------------- */
 .announcement {
   border-left: 3px solid var(--color-accent);
@@ -488,13 +485,14 @@ footer {
   nav { position: relative; }
 
   /* Hero */
-  .hero {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1.5rem;
-    padding: 2.5rem 0 2rem;
+  .hero { padding: 2.5rem 0 0; margin-bottom: 2.5rem; }
+  .hero-photo {  /* stack above the text: too narrow to wrap nicely */
+    float: none;
+    width: 150px;
+    height: 150px;
+    margin: 0 0 1.5rem;
+    shape-outside: none;
   }
-  .hero-photo { width: 150px; height: 150px; }
 
   /* Wiki */
   .wiki-layout {
